@@ -8,7 +8,7 @@
     {{-- csrftoken dropzone --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Informasi Digital</title>
+    <title>Kasir</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -55,21 +55,12 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
             </ul>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
@@ -144,13 +135,8 @@
         <div class="content-wrapper">
             @yield('content')
         </div>
-        <!-- /.content-wrapper -->
+        <!-- /.content-wrapper -->  
         <footer class="main-footer">
-            <strong>Copyright &copy; 2024 <a href="" target="_blank">12108709</a>.</strong>
-            All rights reserved.
-            {{-- <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div> --}}
         </footer>
 
         <!-- Control Sidebar -->

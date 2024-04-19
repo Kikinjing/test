@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Rent-book</title>
+    <title>Login Kasir</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
@@ -23,7 +23,7 @@
             <form action="{{ route('authenticate') }}" method="post" style="width:450px;">
                 @csrf
                 <div class="mb-3 text-center">
-                    <h3>Login</h3>
+                    <h2>Login</h2>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -39,7 +39,7 @@
                 <div class="mb-3 text-center">
                     <p>Don't Have a account? <a href="/register" style="text-decoration: none;">Register</a></p>
                 </div>
-            </form>
+            </form> 
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

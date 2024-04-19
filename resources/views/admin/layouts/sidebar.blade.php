@@ -3,7 +3,7 @@
     @if (Auth::user()->role == 'admin')
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="{{ asset('admin/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+            <img src="{{ asset('admin/dist/img/k.png') }}" alt="kasir Logo"
                 class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Administrator</span>
         </a>
@@ -19,7 +19,7 @@
                     <li class="nav-item {{ request()->routeIs('admin-dashboard') ? 'menu-open' : '' }} ">
                         <a href="{{ route('admin-dashboard') }}"
                             class="nav-link {{ request()->routeIs('admin-dashboard') ? 'active' : '' }}">
-                            <i class="nav-icon fas bi bi-house-door"></i>
+                            <i class="nav-icon fas bi bi-house"></i>
                             <p>
                                 Dashboard
                                 <i class=""></i>
@@ -31,7 +31,7 @@
                         class="nav-item {{ request()->routeIs('produk-admin', 'produk-edit', 'produk-create', 'produk-show') ? 'menu-open' : '' }} ">
                         <a href="{{ route('produk-admin') }}"
                             class="nav-link {{ request()->routeIs('produk-admin', 'produk-edit', 'produk-create', 'produk-show') ? 'active' : '' }}">
-                            <i class="nav-icon fas bi bi-box"></i>
+                            <i class="nav-icon fas bi bi-boxes"></i>
                             <p>
                                 Produk
                                 <i class=""></i>
@@ -42,7 +42,7 @@
                     <li class="nav-item {{ request()->routeIs('penjualan-admin') ? 'menu-open' : '' }} ">
                         <a href="{{ route('penjualan-admin') }}"
                             class="nav-link {{ request()->routeIs('penjualan-admin') ? 'active' : '' }}">
-                            <i class="nav-icon fas bi bi-cart3"></i>
+                            <i class="nav-icon fas bi bi-cart4"></i>
                             <p>
                                 Penjualan
                                 <i class=""></i>
@@ -53,7 +53,7 @@
                     <li class="nav-item {{ request()->routeIs('add_petugas') ? 'menu-open' : '' }} ">
                         <a href="{{ route('add_petugas') }}"
                             class="nav-link {{ request()->routeIs('add_petugas') ? 'active' : '' }}">
-                            <i class="nav-icon fas bi bi-person-vcard"></i>
+                            <i class="nav-icon fas bi bi-person-circle"></i>
                             <p>
                                 User
                                 <i class=""></i>
