@@ -25,10 +25,13 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Bordered Table</h3>
+                            {{-- <h3 class="card-title">Bordered Table</h3> --}}
                             @if (Auth::user()->role == 'petugas')
                                 <a href="{{ route('penjualan-create') }}">
                                     <button class="btn btn-sm btn-primary" style="float: right">Tambah</button>
+                                </a>
+                                <a href="{{ route('penjualan.pdf', ['id' => $penjualans->first()->penjualan_id]) }}">
+                                    <button class="btn btn-sm btn-danger" style="float: left">export PDF</button>
                                 </a>
                             @endif
                         </div>
@@ -48,7 +51,7 @@
                                     @foreach ($penjualans as $penjualan)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td class="text-center">{{ $penjualan->produk->nama_produk }}</td>
+                                            <td class="text-center">{{ $penjualan->produks->nama_produk }}</td>
                                             <td class="text-center">{{ $penjualan->jumlah_produk }}</td>
                                             <td class="text-center">
                                                 Rp.{{ number_format($penjualan->subtotal, 0, ',', '.') }}</td>

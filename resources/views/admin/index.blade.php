@@ -21,6 +21,7 @@
 
     <!-- Main content -->
     <section class="content">
+        @if (Auth::User()->role == 'admin')
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
@@ -43,7 +44,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>{{ $usersCount }}</h3>
 
                             <p>User Registrations</p>
                         </div>
@@ -57,6 +58,9 @@
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
+        @else
+            
+        @endif
     </section>
     <!-- /.content -->
 @endsection

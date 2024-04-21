@@ -51,50 +51,6 @@
         </div><!-- /.container-fluid -->
     </section>
 
-    {{-- modal-detail-penjualan --}}
-    {{-- <div class="modal fade" id="detailpenjualan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail Penjualan</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Customer Name:</strong> Jsj</p>
-                    <p><strong>Address:</strong> Jjsj</p>
-                    <p><strong>Contact Number:</strong> 649</p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th style="width: 10px" class="text-center">No</th>
-                                <th style="width: 10px" class="text-center">Nama Produk</th>
-                                <th style="width: 10px" class="text-center">Jumlah</th>
-                                <th style="width: 30px" class="text-center">SubTotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($penjualans as $penjualan)
-                                <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
-                                    <td class="text-center">{{ $penjualan->detai_id }}</td>
-                                    <td class="text-center">{{ $penjualan->jumlah_produk }}</td>
-                                    <td class="text-center">
-                                        Rp.{{ number_format($penjualan->subtotal, 0, ',', '.') }}</td>
-                                </tr>
-                            @endforeach
-                    </table>
-                    <p><strong>Total:</strong> Rp. 162,000</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -138,17 +94,17 @@
                                             <td class="d-flex justify-content-center">
                                                 @if (Auth::user()->role == 'petugas')
                                                     <div class="button-container">
-                                                            {{-- <a
-                                                                href="{{ route('detail-penjualan-petugas', ['id' => $penjualan->penjualan_id]) }}"> --}}
-                                                        {{-- <button type="button"
+                                                            <a
+                                                                href="{{ route('detail-penjualan-petugas', ['id' => $penjualan->penjualan_id]) }}">
+                                                        <button type="button"
                                                             class="mr-1 btn btn-sm btn-primary btn-detail"
                                                             data-url="{{ route('detail-penjualan-petugas', ['id' => $penjualan->penjualan_id]) }}"
                                                             data-toggle="modal" data-target="#detailpenjualan"
-                                                            > --}}
-                                                            <button type="button" class="mr-1 btn btn-sm btn-primary btn-detail" data-bs-toggle="modal" data-bs-target="#showDetail-{{ $penjualan->penjualan_id }}">
+                                                            >
+                                                            {{-- <button type="button" class="mr-1 btn btn-sm btn-primary btn-detail" data-bs-toggle="modal" data-bs-target="#showDetail-{{ $penjualan->penjualan_id }}"> --}}
                                                             <i class="bi bi-info-square"></i>
                                                         </button>
-                                                        {{-- </a> --}}
+                                                        </a>
                                                         <span class="tooltip">Detail</span>
                                                     </div>
                                                 @else
@@ -165,46 +121,6 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                        <div class="modal fade" id="showDetail-{{ $penjualan->penjualan_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p><strong>Customer Name:</strong> Jsj</p>
-                                                    <p><strong>Address:</strong> Jjsj</p>
-                                                    <p><strong>Contact Number:</strong> 649</p>
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th style="width: 10px" class="text-center">No</th>
-                                                                <th style="width: 10px" class="text-center">Nama Produk</th>
-                                                                <th style="width: 10px" class="text-center">Jumlah</th>
-                                                                <th style="width: 30px" class="text-center">SubTotal</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                                <tr>
-                                                                    @foreach ($details->where('penjualan_id', $penjualan->penjualan_id)->get() as $detail)
-                                                                        <td class="text-center">{{ $loop->iteration }}</td>
-                                                                        <td class="text-center">{{ $detail->produks->nama_produk }}</td>
-                                                                        <td class="text-center">{{ $detail->jumlah_produk }}</td>
-                                                                        <td class="text-center">
-                                                                            Rp.{{ number_format($detail->subtotal, 0, ',', '.') }}</td>
-                                                                    @endforeach
-                                                                </tr>
-                                                    </table>
-                                                    <p><strong>Total:</strong> Rp. {{ number_format($penjualan->total_harga, 0, ',', '.') }}</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                  <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                        </div>
                                     @endforeach
                                 </tbody>
                             </table>

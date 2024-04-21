@@ -10,9 +10,9 @@
 </head>
 <style>
     .form-login {
-        border: 1px solid;
-        padding: 15px;
-        border-radius: 15px 70px;
+        border: 5px solid;
+        padding: 20px;
+        border-radius: 55px 55px;
         box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.8);
     }
 </style>
@@ -35,7 +35,7 @@
                     <input type="password" name="password" class="form-control" id="password"
                         placeholder="Enter a password" required>
                 </div>
-                <button type="submit" class="w-100 btn btn-primary" style="border-radius: 0 2rem">Submit</button>
+                <button type="submit" class="w-100 btn btn-primary" style="border-radius: 2 2rem">Submit</button>
                 <div class="mb-3 text-center">
                     <p>Don't Have a account? <a href="/register" style="text-decoration: none;">Register</a></p>
                 </div>

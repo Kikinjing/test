@@ -46,6 +46,8 @@ Route::group(['middleware' => 'role:admin'], function () {
 
     Route::get('/penjualan-admin', [PenjualanController::class, 'index'])->name('penjualan-admin');
     Route::get('/penjualan-admin/{id}/show', [DetailPenjualanController::class, 'show'])->name('admin-detail-penjualan');
+    Route::get('/penjualan/{id}/pdf', [DetailPenjualanController::class, 'generatePDF'])->name('admin.pdf');
+
 });
 
 Route::group(['middleware' => 'role:petugas'], function () {
@@ -60,4 +62,5 @@ Route::group(['middleware' => 'role:petugas'], function () {
     Route::get('/penjualan-petugas/{id}', [DetailPenjualanController::class, 'show'])->name('detail-penjualan-petugas');
     Route::put('/penjualan/{id}', [PenjualanController::class, 'update'])->name('penjualan-update');
     Route::delete('/penjualan/{id}', [PenjualanController::class, 'delete'])->name('penjualan-delete');
+    Route::get('/penjualan/{id}/pdf', [DetailPenjualanController::class, 'generatePDF'])->name('penjualan.pdf');
 });
